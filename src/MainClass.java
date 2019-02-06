@@ -22,7 +22,6 @@ public class MainClass extends JFrame {
 		win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		MandelPlot plot = new MandelPlot();
 		win.add(plot);
-		win.setVisible(true);
 		
 		win.getContentPane().addMouseMotionListener(new MouseAdapter() {
 			public void mouseMoved(MouseEvent e) {
@@ -32,6 +31,7 @@ public class MainClass extends JFrame {
 				Repaint();
 			}
 		});
+		win.setVisible(true);
 		
 		JFrame win2 = new JFrame();
 		win2.setTitle("Julia Set");
