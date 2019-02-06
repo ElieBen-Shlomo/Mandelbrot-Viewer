@@ -1,18 +1,19 @@
 import java.lang.Math;
 
 public class Conv {
-	public static final int mandelPlotValue = 150;
-	public static final int juliaPlotValue = 300;
-	public static final int n=250;
+	public static final int n = 250;
 	
 	public static CompNum PixelToComplex(int x, int y) {
-		return CompNum.declare(((double)x)/n-2,-(((double)y)/n-1.5) );
+		return new CompNum(((double)x)/n-2, -(((double)y)/n-1.5) );
 	}
+
+	// Not currently being used, but will be useful if we wish to implement a zooming functionality
+    // in the Mandelbrot Viewer
 	public static int ComplexToPixelX(CompNum z) {
-		return (int) Math.round((z.RealPart+2)*n);
+		return (int) Math.round((z.getRealPart()+2)*n);
 	}
 	public static int ComplexToPixelY(CompNum z) {
-		return (int) Math.round((-z.Imagpart+1.5)*n);
+		return (int) Math.round((-z.getImagpart()+1.5)*n);
 	}
 
 }
